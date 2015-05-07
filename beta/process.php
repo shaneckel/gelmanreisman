@@ -8,27 +8,25 @@ if( isset($_POST) ){
   $errors = array();
   $data = array();
 
-  $dataInput = json_decode(file_get_contents('php://input'));
+  // $dataInput = json_decode(file_get_contents('php://input'));
   
-  $formname = $dataInput->name;
-  $formcomment = nl2br($dataInput->comment);
-  $formemail = $dataInput->email;
-  $formphone = $dataInput->phone;
-  $formlaw = $dataInput->law;
-  
-  $data['stuff'] = $dataInput;
+  $formname = $_POST['name'];
+  $formcomment = nl2br($_POST['comment']);
+  $formemail = $_POST['email'];
+  $formphone =$_POST['phone'];
+  $formlaw = $_POST['law'];
 
-  if (empty( $dataInput->formname) ){
+  if (empty( $_POST['name']) ){
     $errors['name'] = 'name is required.';
     $formok = false;
   }
  
-  if (empty( $dataInput->formphone) ){
+  if (empty( $_POST['phone']) ){
     $errors['phone'] = 'phone is required.';
     $formok = false;
   }
 
-  if (empty( $dataInput->formemail) ){
+  if (empty(  $_POST['email']) ){
     $errors['email'] = 'email is required.';
     $formok = false;
   }
