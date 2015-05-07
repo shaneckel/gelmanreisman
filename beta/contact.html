@@ -68,6 +68,8 @@
               <input type="button" name="submit" value="submit" class="submit">
             </div>
           </form>
+          <div class="errorhide">We apologize. There was an error, please call or email us directly.</div>
+          <div class="successhide">Thank you. Your email was sent. You will hear from us soon.</div>
         </section>
         <section class="emaildirect">
           <h2>Email</h2>
@@ -105,13 +107,16 @@
               url: 'process.php',
               data: input_data,
               dataType: 'json',
-              success: function( msg ){
+              success: function(msg){
                 console.log(msg);
                 console.log("sent");
+                $('#contact').hide();
+                $('.errorhide').removeClass('successhide');
               },
               error: function(data){
-                console.log(data);
                 console.log("error");
+                $('#contact').hide();
+                $('.errorhide').removeClass('errorhide');
               }
             });
           }
