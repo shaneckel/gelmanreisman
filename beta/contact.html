@@ -107,11 +107,14 @@
               url: 'process.php',
               data: input_data,
               dataType: 'json',
-              success: function(msg){
-                console.log(msg);
-                console.log("sent");
-                $('#contact').hide();
-                $('.errorhide').removeClass('successhide');
+              success: function(data){
+                if(!data.success){
+                  $('#contact').hide();
+                  $('.errorhide').removeClass('errorhide');
+                }else{
+                  $('#contact').hide();
+                  $('.successhide').removeClass('successhide').text(data.message);
+                } 
               },
               error: function(data){
                 console.log("error");
