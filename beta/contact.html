@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="iefuntime"><![endif]-->
+<!--[if IE 9]><html lang="en" class="iefuntime"><![endif]-->
+<html>
+  <head>
+    <title>article</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta property="og:title" content=" ">
+    <meta property="og:image" content=" ">
+    <meta property="og:url" content=" ">
+    <meta property="og:description" content=""><!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ie.css"><![endif]-->
+  </head>
+  <body>
+    <header> 
+      <div class="topnav">
+        <figure class="brand"><a href="/"><img src="img/gelmanandreisman-logo.png" alt="Gelman and Reisman law offices">
+            <h2>law offices</h2></a></figure>
+        <aside><a href="tel:+4125521352">(412) 552-1352</a><a href="contact.html" class="active contact">Contact</a></aside>
+      </div>
+      <nav class="botnav"><a href="/">Home</a><a href="practices.html">Practices</a><a href="testimonials.html">Testimonials</a><a href="brucegelman.html">Bruce Gelman</a><a href="marcreisman.html">Marc Reisman</a></nav>
+    </header>
+    <main class="page contact">
+      <h1>Contact</h1>
+      <h2>Feel free to email us with any questions</h2>
+    </main>
+    <section class="email">
+      <div class="content">
+        <section class="emailform">
+          <h2>Email Form</h2>
+          <form id="contact"> 
+            <div>
+              <label for="name">name </label>
+              <input type="text" name="name" placeholder="name" title="Your name is required." value required class="name">
+            </div>
+            <div>
+              <label for="email">email </label>
+              <input type="email" name="email" placeholder="email" title="Your email is required." required class="name">
+            </div>
+            <div>
+              <label for="phone">phone </label>
+              <input type="phone" name="phone" placeholder="phone" title="Your phone is required." required class="name">
+            </div>
+            <div>
+              <label for="comment">additional notes </label>
+              <textarea type="text" name="comment" placeholder="comment" class="name"></textarea>
+            </div>
+            <div>
+              <label for="law">interested practice</label>
+              <select type="text" name="law" placeholder="law" class="name">
+                <option value="General Law">General Law</option>
+                <option value="Bicycle Lawyer">Bicycle Lawyer</option>
+                <option value="Liquor licensing Lawyer">Liquor licensing Lawyer</option>
+                <option value="Domestic And Family Lawyer">Domestic And Family Lawyer</option>
+                <option value="Social Security Lawyer">Social Security Lawyer</option>
+                <option value="Wills And Estates Lawyer">Wills And Estates Lawyer</option>
+                <option value="DUI Lawyer">DUI Lawyer</option>
+                <option value="Drivers License Issues Lawyer">Drivers License Issues Lawyer</option>
+                <option value="Divorce Lawyer">Divorce Lawyer</option>
+              </select>
+            </div>
+            <div>
+              <input type="button" name="submit" value="submit" class="submit">
+            </div>
+          </form>
+        </section>
+        <section class="emaildirect">
+          <h2>Email</h2>
+          <p><a href="brucegelman.html">Bruce Gelman</a> <span>: bruce@marcreisman.com</span></p>
+          <p><a href="marcreisman.html">Marc Reisman</a> <span>: marc@marcreisman.com</span></p>
+          <h2>Phone</h2>
+          <p>Call us at <a href="">412 552 1352 </a></p>
+          <h2>Mailing Address</h2>
+          <p>29 Fourth Ave, Suite 1701</p>
+          <p>Law and Finance Building</p>
+          <p>Pittsburgh, PA 15219</p>
+        </section>
+      </div>
+    </section>
+    <main class="page contact">
+      <h1>Location</h1>
+      <h2>Located right in the heart of downtown Pittsburgh.</h2>
+      <section class="map">
+        <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=429%204th%20Ave%2C%20Pittsburgh%2C%20PA%2015222&amp;key=AIzaSyDJcZ32cspKRCk1cWf0E5Nuxh0KL5h6ptM"></iframe>
+      </section>
+    </main>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script>
+      $(function () {
+      
+        $('.submit').click(formSend);
+        
+        function formSend() {
+          var input_data = $('#contact').serialize(); 
+          if($('#contact').valid()){
+            $('.submit').submit(function(e){e.preventDefault()});
+            $.ajax({
+              type: 'post',
+              url: 'process.php',
+              data: input_data,
+              dataType: 'json',
+              success: function( msg ){
+                console.log(msg);
+                console.log("sent");
+              },
+              error: function(data){
+                console.log(data);
+                console.log("error");
+              }
+            });
+          }
+         }
+       });
+    </script>
+    <footer>
+      <section>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="brucegelman.html">bruce gelman</a></li>
+            <li><a href="marcreisman.html">marc reisman</a></li>
+            <li><a href="practices.html">practices</a></li>
+            <li><a href="contact.html" class="active">contact</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li><a href="bicyclelawyer.html">Bicycle law</a></li>
+            <li><a href="liquorlicensinglawyer.html">Liquor Licensing Law</a></li>
+            <li><a href="driverlicenselawyer.html">Driving Law</a></li>
+            <li><a href="duilawyer.html">DUI Law</a></li>
+            <li><a href="domesticandfamilylawyer.html">Family and Divorce Law</a></li>
+            <li><a href="willsandestateslawyer.html">Wills and Estate Law</a></li>
+          </ul>
+        </nav>
+        <nav class="address">
+          <h1>Gelman & Reisman Law Office</h1>
+          <h2>429 Fourth Ave, Suite 1701</h2>
+          <h2>Law and Finance Building</h2>
+          <h2>Pittsburgh, PA 15219</h2>
+          <h3><a href="tel:+4125521352">412 552 1352</a></h3>
+        </nav>
+      </section>
+      <section>
+        <p>© 2015 Gelman & Reisman — <a href="disclaimer.html">disclaimer</a></p>
+      </section>
+    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      // ga('create', 'UA-17701242-11', 'auto');
+      // ga('send', 'pageview');
+      (function(d) { var config = { kitId: 'hlo6xkl', scriptTimeout: 3000},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);
+    </script>
+  </body>
+</html>
