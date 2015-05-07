@@ -37,8 +37,7 @@ if( isset($_POST) ){
     $emailbody .= "<h2 style='color:#57595a;font-weight:800;font-family:sans-serif;font-size:15px;padding:10px 20px 0 20px;border-top:2px solid #ffffff;'>ADDITIONAL COMMENT</h2><p style='font-size:16px;font-family:sans-serif;padding:0 20px 22px 20px;line-height:22px'>{$formcomment}</p><h2 style='color:#57595a;font-weight:800;font-family:sans-serif;font-size:15px;padding:10px 20px 0 20px;border-top:2px solid #ffffff;'>INTERESTED LAW PRACTICE</h2><p style='font-size:16px;font-family:sans-serif;padding:0 20px 22px 20px;line-height:22px'>{$formlaw}</p></div>";
     $emailMessage = "From {$formname}, regarding {$formlaw}.";
 
-    // mail("marc@gelmanreisman.com, bruce@gelmanreisman.com, shaneckel@gmail.com",$emailMessage,$emailbody,$headers);
-    mail("shaneckel@gmail.com",$emailMessage,$emailbody,$headers);
+    mail("marc@gelmanreisman.com, bruce@gelmanreisman.com, shaneckel@gmail.com",$emailMessage,$emailbody,$headers);
 
     $data['success'] = true;
     $data['message'] = 'Thank you. Your email was sent at '. date("g:i a") . '. We will get back to you shortly.';
