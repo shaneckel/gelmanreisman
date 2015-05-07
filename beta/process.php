@@ -10,6 +10,8 @@ if( isset($_POST) ){
 
   $dataInput = json_decode(file_get_contents('php://input'));
   
+  echo($dataInput);
+
   $name = $dataInput->name;
   $comment = nl2br($dataInput->comment);
   $email = $dataInput->email;
@@ -17,7 +19,7 @@ if( isset($_POST) ){
   $law = $dataInput->law;
 
   if (empty( $dataInput->name) ){
-    $errors['name'] = 'Name is required.';
+    $errors['name'] = 'name is required.';
     $formok = false;
   }
  
@@ -27,7 +29,7 @@ if( isset($_POST) ){
   }
 
   if (empty( $dataInput->email) ){
-    $errors['email'] = 'Email is required.';
+    $errors['email'] = 'email is required.';
     $formok = false;
   }
  
