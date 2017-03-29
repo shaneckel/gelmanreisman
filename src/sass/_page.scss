@@ -1,0 +1,477 @@
+main{
+  &.page{
+    padding-top: 10em;
+    padding-bottom: 2.8em;
+    article{
+      font-size: 1.2em;
+      background: #eee;
+      padding: 1em;
+      margin: 1em 0;
+      p{
+        padding: 0;
+      }
+    }
+    p.item, h4{
+      font-weight: 700;
+    }
+    > h1{
+      padding-top: 2.8em;
+      word-break: break-word;
+    }
+    ol{
+      padding-bottom: 1.6em;
+    }
+  }
+  &.practices-index{
+    color: $dgrey;
+    section{
+      display: inline-block;
+      width: 49%;
+      vertical-align: top;
+      margin-top: 2em;
+      &:nth-child(odd){
+        padding-right: 3.5%;
+      }
+      h2 {
+        font-weight: 800;
+      }
+      h3{
+        font-weight: 300;
+      } 
+    }
+  }
+  &.marc{
+    section h4{
+      font-size: 1em;
+      break-line: break-word;
+      font-weight: 300
+    }
+    h3.seperate{
+      padding-top: 1.8em; 
+      font-size: 1.1em;
+      font-weight: 900;
+      position: relative;
+      &:after{
+        content: '';
+        display: inline-block;
+        height: .2em;
+        width: 30%; 
+        background: $lblue;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      padding-bottom: 2.6em;
+    }
+    h2.seperate{
+      position: relative;
+    }
+    h2:nth-of-type(2){
+      font-size: 1em;
+    }
+    article{
+      padding: 0;
+      display: inline-block;
+      width: 47%;
+      vertical-align: top;
+      word-break: break-word;
+      margin-top: 2.2em;
+      date{
+        text-transform: uppercase;
+        font-size: .7em;
+        color: $dblue;
+      }
+      p{
+        font-size: .9em;
+      }
+      &:nth-child(odd){
+        padding-right: 3.5%;
+      }
+      &:nth-child(even){
+        padding-left: 3.5%;
+      }
+    }
+    @media #{$phone} {
+      article{
+        width: 100%;
+         &:nth-child(odd){
+            padding-right: 0%;
+         }         
+         &:nth-child(even){
+            padding-left: 0%;
+         }
+      }
+    }
+  }
+  &.practices{
+    padding-top: 10em;
+    padding-bottom: 0;
+    h2{
+      font-weight:00;
+      padding-bottom: .8em;
+    }    
+    h3{
+      font-style: italic;
+    }
+    > section{
+      margin-right: 0;
+    }
+    > div > section:nth-child(even){
+      margin-right: 0;
+    }
+
+  }
+  &.secondary{
+    padding-bottom: 2.6em;
+    ul{
+      padding-bottom: 1.6em;
+    }
+    h3{
+      font-weight: 800;
+    }
+    h4{
+      font-weight: 800;
+      color: $dgrey;
+      text-transform: uppercase;
+      font-size: .8em;
+    }
+    li{
+      font-weight: .8em;
+      padding-top: .4em;
+    }
+  }
+  &.contact{
+    padding-bottom: 0;
+    position: relative;
+    &:nth-of-type(2){
+       padding-top: 0em
+    }
+    h1{
+      color: $dgrey;
+    }
+    h2{
+      margin-bottom: 0;
+      margin-top: 1.8em;
+      &:first-of-type{
+        margin-top: 0em;
+      }
+    }
+    p{
+      padding-bottom: 0;
+    }
+    img{
+      width: 100%;
+      padding-top: 1em;
+    }
+  }
+  &.family{
+    h3{
+      font-weight: 800;
+      margin-top: 1em;
+    }
+  }
+  &.index{
+    padding-top: 2.6em;
+    padding: 0;
+    section, > p{
+
+      padding: 1.6em 1em 1em 2.6em;
+      @media #{$phone} {
+        padding: 1.2em 1em 1em 1.2em;
+      }
+      color: $dgrey;
+    }
+    > section {
+      border-top: .2em solid $grey;
+      &:nth-of-type(1){
+        border-top: 0;
+        display: block;
+      }
+    }
+    > p:nth-child(1){
+      padding-top: 3.2em;
+    }
+    > p:nth-child(2){
+      padding-bottom: 2.6em;
+    }
+    aside{
+      padding: 1.6em 1em 1.6em 2.6em;
+      text-transform: uppercase;
+      background: $red;
+      color: $grey;
+      a{
+        color: $lgrey;
+      }
+      p{
+        padding-bottom: 0; 
+        span{
+          font-weight: 900;      
+        }
+      }
+      &:nth-of-type(1){
+        background: $dgrey;
+      }
+    }
+
+    h2:first-of-type{
+      padding-top: 0;
+    }
+    h2:not(:first-of-type):before{
+      content: '';
+      display: inline-block;
+      height: .2em;
+      width: 30%; 
+      background: $lblue;
+      display: inline-block;
+      position: absolute;
+      top: 0em;
+    }
+
+    > div{
+      width: 100%;
+      position: relative;
+      border-top: .2em solid $grey;
+      border-bottom: .2em solid $grey;
+      display: block;
+      &:first-of-type{
+        border-bottom: 0;
+      }
+      > section{
+        display: inline-block;
+        width: 49.5%;
+        position: relative;
+        &:nth-child(1){
+          // border-right: .1em solid $grey;
+        }
+        &:nth-child(2){
+          border-left: .2em solid $grey;
+          position: relative;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+section.testimonials{
+  color: $dgrey;
+  margin: 0 auto;
+  position: relative;
+  blockquote{
+    color: $dgrey;
+  }
+  aside{
+    padding: 1.6em 1em 1.6em 2.6em;
+    background: $lblue;
+    color: $lgrey;
+    z-index: 99;
+    position: relative;
+    a{
+      color: $dred;
+    }
+    p{
+      text-transform: uppercase;
+      padding-bottom: 0;
+    }
+  }
+  h4{
+    padding-top: 1em;
+    font-size: 1.2em;
+    font-weight: 800;
+    color: $red;
+    span{
+      font-weight: 300;
+      font-size: .8em;
+      font-style: italic;
+      color: $lblue;
+    }
+  }
+  &.index{
+    &:nth-of-type(3) blockquote{
+      border-top: .2em solid $grey;
+    }
+  }
+}
+
+main.page{
+  section.testimonials{
+    margin: 1em 0;
+    padding-top: 1.8em;
+  }
+  section.testimonials:first-of-type {
+    padding-top: 0;
+  }
+  section.testimonials:first-of-type h4{
+    padding-top: 0;
+  }
+  section.testimonials:not(:first-of-type):before{
+    content: '';
+    display: inline-block;
+    height: .2em;
+    width: 30%; 
+    background: $lblue;
+    display: inline-block;
+    position: absolute;
+    top: 0em;
+  }
+}
+
+.email{
+  background: $lblue;
+  .content{
+    padding: 2.6em 1em 2.6em 2.6em;
+    margin: 0 auto;
+    background: $grey;
+  } 
+  .emailform{
+    width: 45%;
+    display: inline-block;
+    h2{
+      font-weight: 800;
+      color: $dgrey;
+    }
+  }
+  .emaildirect{
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 2.8em;
+    h2{
+      padding-bottom: .6em;
+      font-weight: 800;
+      color: $dgrey;
+      &:not(:first-of-type){
+        padding-top: 1.8em;
+      }
+    }
+    p{
+      padding-bottom: .6em;
+      a{
+        @media #{$phone} {
+          padding-top: .6em 0;
+        }
+      }
+    }
+  }
+  .errorhide, .successhide{
+    display: none; 
+  }
+  label{
+    width: 100%;
+    display: block;
+    font-size: .8em;
+    margin-top: .8em;
+    text-transform: uppercase;
+    color: $dblue;
+    &.error{
+      color: #ba4055;
+      text-transform: none;
+      font-style: italic;
+      margin-top: .4em;
+    }
+  }
+  input, textarea, select{
+    width: 100%;
+    padding: .5em;
+    margin-top: .2em;
+    font-size: 1.2em;
+    &.error{
+      border: 2px solid #ba4055;
+    }
+  }
+  input{
+    height: 2.4em;
+  }
+  input.submit{
+    width: auto;
+    margin-top: 1.8em;
+    width: 50%;
+  }
+}
+body > section.first blockquote {
+  padding-top: 1.6em
+}
+@media #{$phone} {
+  main.page, body > .feature{
+    padding-top: 5em;
+    h1{
+      line-height: 1.8em;
+    }
+  }
+  main.index section p > a {
+    font-size: 1.5em;
+  }
+  section.testimonials aside, main.index aside{
+    padding: 1.6em 1em 1.6em 1em;
+  }
+  main.index section{
+    padding: 1em;
+    font-size: .7em;
+  }
+  main.page.mapcontainer{
+    display: none;
+  }
+  blockquote{
+    font-size: .8em;
+  }
+  main.page{
+    blockquote{
+      font-size: .8em;
+    }
+    h1{
+      padding-top: 1.8em;
+    }
+  }
+  main.page.practices-index > section{
+    padding-top: 0;
+    margin-top: 0em;
+    a{
+      margin-top: .5em;
+      font-size: 1.2em;
+    }
+  }
+  main.page.practices-index > section h2{
+    font-size: 1.25em;
+    padding-bottom: .6em;
+  }
+  body > section.first blockquote {
+    padding-top: 1.6em
+  }
+  .page ul{
+    font-size: .8em;
+    li{
+      padding-top: 1.2em;
+    }
+  }
+}
+
+
+.smallbrand{
+  display: none;
+  padding: 1.2em 1em 1em 1.2em;
+  border: 0;
+  background: $red;
+  h2.smallsub{
+    text-transform: uppercase;
+    font-size: .85em;
+    letter-spacing: .6em;
+    color: #302426;
+    padding: 0;
+    font-weight: 900;
+    border: 0;
+    padding-bottom: 0;
+  }
+  img{
+    width: 100%;
+    max-width: 15em;
+  }
+  a{
+    border: 0;
+  }
+}
+@media #{$phone} {
+  .smallbrand{
+    display: block;
+  }
+}

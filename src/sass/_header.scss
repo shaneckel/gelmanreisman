@@ -1,0 +1,268 @@
+@import 'reset';
+@import 'vars';
+@import 'global';
+//header
+
+header{
+  position: fixed;
+  background: white;
+  left: 0;
+  right: 0;
+  background: $red;
+  color: $lgrey;
+  border-top: 1.2em solid $dgrey;
+  font-family: "adelle-sans";
+  width: 100%;
+  padding: 1.8em 0 .4em 0;
+  height: 10em;
+  z-index: 999;
+  @media #{$phone} {
+    transition: all .1s cubic-bezier(0.25, 0.5, 0.55, 1);
+    border-top: 0 solid $dgrey;
+
+  }
+  a{
+    transition: none;
+    border-bottom: 0;
+    &:hover{
+      transition: none;
+      border-bottom: 0; 
+    }
+  }
+  div.topnav{
+    display: block;
+    display: box;
+    display: flex;
+    margin: 0 auto; 
+    padding-bottom: 0;
+    max-width: $maxwidth;
+    align-items: center;
+    text-transform: uppercase;
+    padding-left: 2.6em;
+    padding-right: 1em;
+    a{
+      color: $grey;
+      letter-spacing: .068em;
+    }
+    .contact{
+      background: $grey;
+      color: $dred;
+      padding: .35em 1em;
+      margin-left: 1em;
+      font-weight: 800;
+      font-size: .85em;
+      letter-spacing: .085em;
+      @media #{$phone} {
+        transition: all .4s linear;
+      }
+      position: relative; 
+      top: -.01em;
+
+      &:hover{
+        transition: all .2s linear;
+        background: $lgrey;
+        color: $red;
+      }
+      &.active{
+        background: $lgrey;
+        color: $dblue;
+      }
+    }
+  }
+
+  nav.botnav{
+    margin: 0 auto; 
+    max-width:  $maxwidth;
+    padding-top: .6em;
+    padding-left: 1.8em;
+    position: relative;
+    pointer-events: none;
+    display: block;
+    a{
+      pointer-events: visiblefill;
+      text-decoration: none;
+      color: $lblue;
+      text-transform: capitalize;
+      letter-spacing: .068em;
+      padding: 0 .8em;
+      border-left: .1em solid $dred;
+      @media #{$phone} {
+        transition: all .2s linear;
+      }
+      font-size: .9em;
+      &:hover{
+        transition: all .2s linear;
+        color: $lgrey;
+      }
+      &:first-child{
+        border-left: 0;
+      }
+      &.active{
+        color: $lgrey;
+        font-weight: 800;
+      }
+    }
+  }
+
+  figure.brand{
+    opacity: 1;
+    h2{
+      text-transform: uppercase;
+      font-size: .92em;
+      letter-spacing: .6em;
+      color: #1F191A;
+      padding: 0;
+      font-weight: 900;
+    }
+    img{
+      width: 22em;
+    }
+  }
+
+  aside{
+    flex: 1;
+    flex-basis: inherit;
+    text-decoration: none;
+    text-align: right;
+    align-self: flex-start;
+    padding-top: 1.05em;
+    a{
+      color: $lgrey;
+    }
+    div{
+      padding-bottom: 1em;
+    }
+  }
+}
+
+.min header{
+  @media #{$phone} {
+    transition: all .1s cubic-bezier(0.25, 0.5, 0.55, 1);
+  }
+  border-top: 0 solid $dgrey;
+  padding: 0em 0 0 0;
+  height: 3.8em;
+  figure.brand{
+    opacity: 0;
+    position: relative;
+  }
+  .botnav{
+    top: -3.35em;
+  }
+}
+
+// phone magic
+
+@media #{$phone} {
+  .min header{
+    height: 4em;
+    transition: all .1s cubic-bezier(0.25, 0.5, 0.55, 1);
+    .botnav{
+      top: -18.7em
+    }
+    &.full{
+      height: 19.2em;
+    }
+    aside{
+      padding-top: 1.4em;
+    }
+  }
+
+  header{
+    height: 5em;
+    border-top: .2em solid #57595a;
+    border-top: 0 solid $dgrey;
+    border-bottom: .2em solid #57595a;
+    padding: .4em 0 .5em 0;
+    &.full{
+      height: 20.5em;
+      .botnav{
+        top: -4.2em;
+        a{
+          padding-top: 1em;
+        }
+      }
+    }
+    aside{
+      padding-top: 1.6em;
+    }
+    div.topnav{
+      padding-left: .8em;
+      .contact{
+        padding: .65em 1em;
+        top: -0.5em;
+        margin-left: 0;
+      }
+    }
+    nav.botnav{ 
+      width: 13em;
+      top: -19.2em;
+      padding-left: 0;
+      text-align: center;
+      padding-right: 2em;
+      a{
+        display: inline-block;
+        text-align: center;
+        border: 0;
+        padding: 1em 0; 
+        &:first-child{
+          display: none;
+        }
+      }
+      .menu{
+        font-weight: 800;
+        text-transform: uppercase;
+        border: none;
+        display: inline-block;
+        text-align: center;
+        padding: .4em .6em;
+        border: .2em solid;
+        margin-top: 2em;
+        cursor: pointer;
+        &.hide{
+          display: none;
+        }
+        &.close{
+          background: $mgrey;
+          color: $red;
+          border: none;
+        }
+      }
+    }
+  }
+}
+ 
+@media #{$tab} {
+  .min header{
+    .topnav aside a:first-child{
+      display: none;
+    }
+  }
+}
+
+@media #{$cap} {
+  header{
+    nav.botnav{
+      margin: 0 auto; 
+      max-width:  $maxwidth;
+      padding-top: .4em;
+      padding-left: 1.8em;
+      position: relative;
+      pointer-events: none;
+    }
+  }
+}
+
+@media #{$notphone} {
+  .menu{
+    display: none;
+  }
+} 
+
+@media #{$phone} {
+  header{
+    nav.botnav a{
+      font-size: 1em;
+    } 
+  }
+}

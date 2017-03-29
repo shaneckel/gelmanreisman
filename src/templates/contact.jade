@@ -1,0 +1,99 @@
+extends layouts/default
+
+append mainVars
+  - title   = 'contact'
+  - pageTitle   = 'Contact for Gelman & Reisman — Pittsburgh Lawyers'
+  - metaDesc    = 'Feel free to email us with any questions'
+
+block content
+  main.page.contact
+    h1 Contact
+    h2 Feel free to email us with any questions.
+  section.email
+    div.content
+      section.emailform
+        h2 Email Form
+        form#contact() 
+          div
+            label(for="name") name 
+            input.name(type="text" name="name" placeholder="name" title="Your name is required." value required)
+          div
+            label(for="email") email 
+            input.name(type="email" name="email" placeholder="email" title="Your email is required." required)
+          div
+            label(for="phone") phone 
+            input.name(type="phone" name="phone" placeholder="phone" title="Your phone is required." required)
+          div
+            label(for="comment") additional notes 
+            textarea.name(type="text" name="comment" placeholder="comment")
+          div
+            label(for="law") interested practice
+            select.name(type="text" name="law" placeholder="law")
+              option(value="General Law") General Law
+              option(value="Bicycle Lawyer") Bicycle Lawyer
+              option(value="Liquor licensing Lawyer") Liquor licensing Lawyer
+              option(value="Domestic And Family Lawyer") Domestic And Family Lawyer
+              option(value="Social Security Lawyer") Social Security Lawyer
+              option(value="Wills And Estates Lawyer") Wills And Estates Lawyer
+              option(value="DUI Lawyer") DUI Lawyer
+              option(value="Drivers License Issues Lawyer") Drivers License Issues Lawyer
+              option(value="Divorce Lawyer") Divorce Lawyer
+              option(value="Personal Injury Lawyer") Personal Injury Lawyer
+          div: input.submit(type="button" name="submit" value="submit")
+        div.errorhide We apologize. There was an error, please call or email us directly.
+        div.successhide Thank you. Your email was sent. You will hear from us soon.
+      section.emaildirect
+        h2 Email
+        p #[a(href="brucegelman") Bruce Gelman] 
+          span : bruce@gelmanreisman.com
+        p #[a(href="marcreisman") Marc Reisman] 
+          span : marc@gelmanreisman.com
+        h2 Phone
+        p Call us at 
+          a(href="tel:4122889200") (412) 288 - 9200
+        p Toll free at  
+          a(href="tel:18008831529") 1-800-883-1-LAW 
+        p Fax Number (412) 281 - 3530  
+        h2 Mailing Address
+        p 429 Fourth Ave, Suite 1701
+        p Law & Finance Building
+        p Pittsburgh, PA 15219
+  main.page.contact.mapcontainer
+    h1 Location
+    h2 Located right in the heart of downtown Pittsburgh.
+    section.map
+      iframe(width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.660676160522!2d-79.99836499999996!3d40.438511999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f150ba0e92a3%3A0xd4581f8a9c640797!2sGelman+%26+Reisman+Law+Offices!5e0!3m2!1sen!2sus!4v1436437288412" )
+  //- <!--[if lte IE8]><!-->
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+  //- <![endif]-->
+
+  script.
+    $(function () { 
+      $('.submit').click(formSend);
+      function formSend() {
+        var input_data = $('#contact').serialize(); 
+        if($('#contact').valid()){
+          $('.submit').submit(function(e){e.preventDefault()});
+          $.ajax({
+            type: 'post',
+            url: 'process.php',
+            data: input_data,
+            dataType: 'json',
+            success: function(data){
+              if(!data.success){
+                $('#contact').hide();
+                $('.errorhide').removeClass('errorhide');
+              }else{
+                $('#contact').hide();
+                $('.successhide').removeClass('successhide').text(data.message);
+              } 
+            },
+            error: function(data){
+              console.log("error");
+              $('#contact').hide();
+              $('.errorhide').removeClass('errorhide');
+            }
+          });
+        }
+       }
+     });

@@ -1,0 +1,28 @@
+html.iefuntime{
+  .topnav aside{
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+  .brand{
+    display: inline-block;
+    width: 50%;
+  }
+ .min .brand a{
+  display: none;
+  }
+  .menu{
+    display: none;
+  }
+  .min .botnav{
+    position: relative;
+    top: -2.2em;
+  }
+  footer{
+    nav{
+      width: 33%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}

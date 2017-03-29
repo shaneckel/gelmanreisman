@@ -1,0 +1,58 @@
+
+//breaks
+
+$phone:  "only screen and (max-width: 767px)"; // phones
+$notphone:    "only screen and (min-width: 768px)";   // tablet
+$tab:   "only screen and (max-width: 1024px)"; // desktop
+$desk:   "only screen and (min-width: 1025px)"; // desktop
+$cap:    "only screen and (min-width: 1260px)";  // capped
+
+//sizes
+
+$maxwidth: 56em; 
+$headerheight: 10em;
+
+//colors
+
+$lgrey:   #e9edef;
+$grey:    #d1d6d9;
+$mgrey:   #9da0a2;
+$dgrey:   #57595a;
+
+$lblue:   #9fb3bd;
+$dblue:   #668594;
+
+$red:     #5b3f44;
+$dred:    #1D1819;
+
+
+//type
+
+// >768 && < 1024
+@media #{$tab} {
+  body{
+    font-size: 1em;
+  }
+}
+
+// >1024 && <1260
+@media #{$desk} {
+  body{
+    font-size: 1.2em;
+  }
+}
+
+// >1260
+@media #{$cap} {
+  body{
+    font-size: 1.2em;
+  }
+}
+
+// <768 
+@media #{$phone} {
+  body{
+    font-size: .9em;
+  }
+}
+

@@ -1,0 +1,65 @@
+
+body > .feature {
+  position: relative;
+  line-height: 0;
+  h1{
+    position: absolute;
+    top: 12.42em;
+    color: $lgrey;
+    background: $dgrey;
+    padding: 1em .4em 1em 1.55em;
+    letter-spacing: .022em;
+  } 
+  &:after{
+    content: '';
+    background-color: #9fb3bd;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+    top: $headerheight;
+    left: 0;
+  } 
+  &:before{
+    content: '';
+    background-color: $dgrey;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    z-index: 9;
+  }   
+  figure{
+    max-width: $maxwidth;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+    position: relative;
+    background-color: $dgrey;
+    img{
+      width: 100%;
+    }
+  }
+ 
+} 
+
+// phone magic
+
+@media #{$phone} {
+  body >.feature{
+    h1{
+      top: 70%;
+      font-size: 1.8em;
+      line-height: 1.5em!important;
+      padding: .6em 1em .8em .8em;
+      display: block;
+      position: relative;
+      letter-spacing: 0em;
+
+    }
+    &:after, &:before{
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+
+//footer
+
+body > footer{
+  font-size: 1em;
+  background: #ccc;
+  position: relative;
+  z-index: 9;
+  background: $dgrey;
+  text-transform: capitalize;
+  &:before{
+    content: '';
+    background-color: #9fb3bd;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  section{
+    background: $dgrey;
+    position: relative;
+    z-index:99;
+    color: $lgrey;
+    padding-top: 2.6em;
+    padding-bottom: 2.6em;
+    a{
+      color: $mgrey;
+    }
+  }
+  section:first-child{
+    display: flexbox;
+    display: box;
+    display: flex;
+    nav{
+      flex: 1 40%; 
+    }
+    h1{
+      font-size: 1em;
+    }
+  }
+  section:nth-child(2){
+    padding-top: 0;
+    p{
+      border-top: .2em solid $mgrey;
+      font-size: .8em;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $mgrey;
+      padding: 0;
+      padding-top: 1.8em;
+    }
+  }
+  li{
+    padding: 0 0 .5em 0;
+  }
+}
+nav.address{
+  h1{
+    font-size: 1.2em;
+    font-weight: 800;
+    line-height: 1em;
+    padding-top: 0;
+    padding-bottom: 1em;
+  }
+  h2{
+    color: $grey;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.1em;
+  }
+  h3{
+    padding-top: 1em;
+  }
+}
+
+body > footer section:first-child nav:nth-child(2){
+  font-size: .85em;
+  line-height: 1.2em;
+}
+body > footer section:first-child nav:nth-child(1){
+  line-height: 1.55em;
+}
+
+@media #{$phone} {
+  body > footer section:first-child{
+    display: block;
+    nav{
+      padding-bottom: 1em;
+      li > a{
+        padding-top: .6em;
+      }
+    }
+    nav:first-child {
+      border-bottom: 1px solid $mgrey;
+      margin-bottom: 1em;
+    }
+    nav:nth-child(2){
+      font-size: 1.2em;
+    }
+    nav.address{
+      font-size: 1.2em;
+      padding-top: 1.2em;
+    }
+  }
+}

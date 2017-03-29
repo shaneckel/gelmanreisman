@@ -1,0 +1,18 @@
+header
+  div.topnav
+    figure.small: a(href="/")
+      img(src="img/logo-small.png" alt="Gelman and Reisman - Pittsburgh Law Offices")
+    figure.brand: a(href="/")
+      img(src="img/gelmanandreisman-logo.png" alt="Gelman and Reisman - Pittsburgh Law Offices")
+      h2 pittsburgh law offices
+    aside
+      a(href='tel:+4122889200') (412) 288 - 9200
+      a(class=(title === 'contact' ? 'active' : '') href='contact').contact Contact
+  nav.botnav
+    a(class=(title === 'home' ? 'active' : '') href='/') Home
+    a(class=(title === 'practices' ? 'active' : '') href='practices') Practices
+    a(class=(title === 'testimonials' ? 'active' : '') href='testimonials') Testimonials
+    a(class=(title === 'bruce' ? 'active' : '') href='brucegelman') Bruce S. Gelman
+    a(class=(title === 'marc' ? 'active' : '') href='marcreisman') Marc S. Reisman
+    a.menu.open menu
+    a.menu.close.hide close

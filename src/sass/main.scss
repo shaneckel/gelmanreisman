@@ -1,0 +1,78 @@
+
+//gelman & reisman main sheet
+
+@import 'reset';
+@import 'vars';
+@import 'global';
+@import 'header';
+@import 'footer';
+@import 'feature';
+@import 'page';
+
+figure.small{
+  display: none;
+}
+@media #{$phone} {
+  figure.brand{
+    display: none;
+  }
+  header{
+    padding-top: 0;
+    padding-bottom: .4em;
+  }
+  figure.small{
+    display: inline-block;
+    width: 4.8em;
+  }
+  // .min header .botnav{
+  //   top: -18.7em;
+  // }
+  // header nav.botnav{
+  //   top: -19.4em;
+  // }
+  .min figure.small{
+    width: 4.05em;
+  }
+  .topnav > aside a:first-of-type{
+    display: none;
+  }
+  // .min .botnav{
+  //   display: none;
+  // }
+  body{
+    margin: 0 .4em .6em .4em;
+  }
+  main.page > h2{
+    font-size: 1.6em;
+  }
+  main.page > section h2{
+    padding-top: 1em;
+    font-size: 1.05em;
+  }
+
+  main.practices-index section{
+    width: 98%;
+  }
+  .email .emaildirect{
+    width: 100%;
+    display: block;
+    padding-left: 0;
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
+  .email .emailform{
+    display: block;
+    width: 100%;    
+  }
+  .email .content{
+    padding: 1em;
+  }
+  main.contact{
+    padding-left: 1em;
+    padding-bottom: 1em;
+    h1{
+      padding-top: 1em;
+    }
+  }
+}
+

@@ -1,0 +1,104 @@
+
+//global
+
+*, *:before, *:after { 
+  box-sizing: border-box
+}
+
+body{
+  background-color: $lgrey;
+  line-height:1.33333;
+  font-family: "adelle-sans";
+  background: $grey;
+}
+
+//figure 
+
+img{
+  width: 100%;
+}
+
+//centering 
+
+body > main, 
+body > .testimonials blockquote, 
+body > .testimonials > aside, 
+body > footer section,
+.email > .content{
+  display: block;
+  max-width: $maxwidth;
+  margin: 0 auto; 
+  color: #333;
+  width: 100%;
+  padding-left: 2.6em;
+  padding-right: 1em;
+  background: $lgrey;
+  @media #{$phone} {
+    padding-left: 1em;
+    padding-right: .5em;
+  }
+}
+
+//fonts
+
+a{
+  text-decoration: none;
+  transition: border-bottom .2s;
+  border-bottom: 1px solid;
+  display: inline-block;
+  color: $red;
+  &:hover{
+    transition: border-bottom .2s;
+    border-bottom: 1px solid rgba(0,0,0,0); 
+  }
+} 
+h1 { 
+  font-size: 1.732em; 
+  text-transform: capitalize;
+  padding: .88em 0 .552em;
+  font-weight: 800;
+}
+h2 { 
+  font-size: 1.33333em; 
+  padding: .24em 0; 
+
+}
+p{
+  padding-bottom: 1.95em;
+  line-height: 1.68em;
+}
+
+//page padding
+
+.feature, main.page{
+  padding-top: $headerheight;
+  > h1{
+    color: $dgrey;
+  }
+  > h2{
+    font-size: 1.24em;
+    color: #668594;
+    padding-top: 0;
+    padding-bottom: .8em;
+    font-style: italic;
+  }
+}
+
+//breadcrumbs
+
+aside.breadcrumbs > p{
+  text-transform: uppercase; 
+  font-size: .75em;
+  letter-spacing: .085em;
+  color: $dblue;
+  a{
+    color: $dblue;
+    transition: border-bottom .2s;
+    border-bottom: 1px solid $dblue;
+    &:hover{
+      transition: border-bottom .2s;
+      border-bottom: 1px solid $lgrey; 
+    }
+  }
+}
+
